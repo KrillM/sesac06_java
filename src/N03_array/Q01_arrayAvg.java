@@ -11,6 +11,7 @@ public class Q01_arrayAvg {
 
         int total=0;
         for(int i=0;i<x.length;i++){
+            System.out.println("숫자 "+(i+1)+"입력");
             x[i]=sc.nextInt();
             total += x[i];
         }
