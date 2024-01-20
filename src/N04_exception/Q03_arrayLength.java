@@ -5,7 +5,6 @@ import java.util.*;
 public class Q03_arrayLength {
     public static void main(String[] args) {
         Scanner sc=new Scanner(System.in);
-        Random r=new Random();
         int x=-1;
 
         try{
@@ -16,18 +15,22 @@ public class Q03_arrayLength {
             }
             else{
                 int[]arr=new int[x];
-                for(int i=0;i<arr.length;i++){
-                    arr[i] = r.nextInt(10)+1;
-                }
+                try{
+                    for(int i=0;i<arr.length;i++){
+                        arr[i] = sc.nextInt();
+                    }
 
-                System.out.println(Arrays.toString(arr));
+                    System.out.println(Arrays.toString(arr));
 
-                for(int i=0;i<arr.length;i++){
-                    for(int j=0;j<i;j++){
-                        if(arr[j]==arr[i]){
-                            System.out.print(arr[i]+" "+arr[j]+" ");
+                    for(int i=0;i<arr.length;i++){
+                        for(int j=0;j<i;j++){
+                            if(arr[j]==arr[i]){
+                                System.out.print(arr[i]+" ");
+                            }
                         }
                     }
+                } catch (InputMismatchException e) {
+                    System.out.println("정수 외에는 입력할 수 없습니다.");
                 }
             }
 
