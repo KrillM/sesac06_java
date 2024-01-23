@@ -7,7 +7,7 @@ class Student{
     private String name;
     private int number;
     private int grade;
-    static int totalStudents = 0;
+    static private int totalStudents = 0;
 
     public String getName() {
         return name;
@@ -33,6 +33,21 @@ class Student{
         this.grade = grade;
     }
 
+    public static int getTotalStudents() {
+        return totalStudents;
+    }
+
+    public static void setTotalStudents(int totalStudents) {
+        Student.totalStudents = totalStudents;
+    }
+
+    Student(String name, int number, int grade){
+        this.name=name;
+        this.number=number;
+        this.grade=grade;
+        setTotalStudents(getTotalStudents() + 1);
+    }
+
     public void displayInfo(){
         System.out.println("=== 학생 정보 ===");
         System.out.println("이름: " + getName());
@@ -41,7 +56,7 @@ class Student{
     }
 }
 
-public class Q03_staticStudents {
+public class Q02_staticStudents {
 
     public static void main(String[] args) {
         Scanner sc=new Scanner(System.in);
@@ -60,15 +75,9 @@ public class Q03_staticStudents {
                 break;
             }
 
-            Student.totalStudents += 1;
-
-            Student student=new Student();
-            student.setName(x);
-            student.setNumber(y);
-            student.setGrade(z);
-            students.add(student);
+            students.add(new Student(x, y, z));
         }
 
-        System.out.println("학생 수 "+Student.totalStudents);
+        System.out.println("학생 수 "+Student.getTotalStudents());
     }
 }
