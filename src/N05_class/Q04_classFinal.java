@@ -46,7 +46,7 @@ class Airplane extends Vehicle implements Flyable{
     }
 }
 
-public class Q01_classFinal {
+public class Q04_classFinal {
     public static void main(String[] args) {
         Vehicle[]vehicle=new Vehicle[2];
         vehicle[0] = new Car();
