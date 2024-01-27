@@ -41,5 +41,9 @@ public class Ex04_hashMap {
         // 키 Set 컬렉샨을 얻고, 반복해서 키와 값 얻기
         Set<Integer> keySet = map.keySet();
         System.out.println(keySet);
+
+        // 주어진 키와 일치하는 entry 삭제
+        String deletedValue = map.remove(key);
+        System.out.printf("%s 학생이 삭제되었습니다. %n", deletedValue);
     }
 }
